@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-12 text-center bg-secondary">
+    <h2>Data Binding Types in Detail</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 text-center bg-warning">
+    <h3>One Way</h3>
+  </div>
+  <div class="col-6 text-center bg-danger">
+    <h3>Two Way</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 text-center bg-primary">
+    <h4>.ts to .html</h4>
+  </div>
+  <div class="col-3 text-center bg-danger">
+    <h4>.html to .ts</h4>
+  </div>
+  <div class="col-6 text-center bg-danger">
+    <h4>Ng Module</h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-3 text-center bg-primary">
+    <div class="row">
+      <div class="col-6 bg-danger">
+        <h5>Interpolation</h5>
+      </div>
+      <div class="col-6 bg-secondary">
+        <h5>Property Binding</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 text-center bg-info">
+    <div class="row">
+      <div class="col-12">
+        <h5>Event Binding</h5>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+  </div>
+</div>
+
+<div class="row m-2 gap-2">
+  interpolation Examples
+  <div class="row">practiceName : {{practiceName}}</div>
+  <div class="row">noOfHoursRequired : {{noOfHoursRequired}}</div>
+</div>
+<div class="row m-2 gap-2">
+  propertyBinding Examples
+  <div class="row">
+    <input [type]="fieldType" [value]="fieldValue" />
+  </div>
+</div>
+
+<div class="row m-2 gap-2">
+  Event Binding Examples
+  <div class="row">
+    <input [type]="fieldType" [value]="fieldValue" (change)="handleChange($event)" />
+  </div>
+  <button class="btn btn-secondary" (click)="handleClick('Angular')">Angular</button>
+  <button class="btn btn-secondary" (click)="handleClick('React')">React</button>
+  <button class="btn btn-secondary" (click)="handleClick('Vue')">Vue</button>
+</div>
