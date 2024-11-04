@@ -26,6 +26,91 @@
     <input type="text" [(ngModel)]="div2show" />
   </div>
   <div class="col-3 p-2 bg-warning">
-    <h2>DIV 3</h2>
+    @if (dayVal === "Mon") {
+    <h4>Monday</h4>
+    } @else if(dayVal === "Tue"){
+    <h4>Tuesday</h4>
+    }
+    @else if(dayVal === "Tue"){
+    <h4>Tuesday</h4>
+    }
+    @else if(dayVal === "Wed"){
+    <h4>Wednesday</h4>
+    }
+    @else if(dayVal === "Thu"){
+    <h4>Thursday</h4>
+    }
+    @else if(dayVal === "Fri"){
+    <h4>Friday</h4>
+    }
+    @else if(dayVal === "Sat"){
+    <h4>Saturday</h4>
+    }
+    @else if(dayVal === "Sun"){
+    <h4>Sunday</h4>
+    }@else {
+    <h4>No Day Found</h4>
+    }
+  </div>
+  <div class="col-3 p-2 bg-info">
+    <input type="text" [(ngModel)]="dayVal" />
+  </div>
+</div>
+<div class="row">
+  <div class="col-2">
+    <ul>
+      @for (e of cityNames; track $index) {
+      <li>{{e}}</li>
+      }
+    </ul>
+  </div>
+  <div class="col-2 d-flex flex-column gap-2">
+    @for (item of cityNames; track $index) {
+    <button class="btn btn-primary">{{item}}</button>
+    }
+  </div>
+  <div class="col-2 d-flex flex-column gap-2">
+    @for (item of cityNames; track $index) {
+    <input [value]="item" type="text">
+    }
+  </div>
+</div>
+
+
+<div class="row my-2">
+  <div class="col-8">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+          <th>Email</th>
+          <th>Payroll</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of employees; track $index) {
+        <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.position}}</td>
+          <td>{{item.department}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.salary}}</td>
+          <td style="background-color:{{item.active?'green':'red'}}">
+            @if (item.active === true) {
+            Active
+            }@else{
+            Vication
+            }
+          </td>
+        </tr>
+        }
+
+      </tbody>
+    </table>
   </div>
 </div>
