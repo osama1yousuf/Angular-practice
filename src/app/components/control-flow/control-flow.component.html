@@ -100,7 +100,7 @@
           <td>{{item.department}}</td>
           <td>{{item.email}}</td>
           <td>{{item.salary}}</td>
-          <td style="background-color:{{item.active?'green':'red'}}">
+          <td [ngStyle]="{'background-color': item.active ? 'green' : 'red'}">
             @if (item.active === true) {
             Active
             }@else{

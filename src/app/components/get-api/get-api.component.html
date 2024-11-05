@@ -1,0 +1,17 @@
+<div class="row m-2">
+  @for (item of todosList; track $index) {
+  <div class="col-3">
+    <div class="card m-2">
+      <div class="card-body">
+        <p class="card-text">Created By User Id : {{item?.userId}}</p>
+        <h5 class="card-title">{{item.title}}</h5>
+        @if (item.completed) {
+        <a class="btn btn-primary">Completed</a>
+        }@else {
+        <a class="btn btn-danger">Incomplete</a>
+        }
+      </div>
+    </div>
+  </div>
+  }
+</div>

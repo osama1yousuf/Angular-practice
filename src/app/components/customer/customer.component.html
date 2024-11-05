@@ -1,0 +1,72 @@
+<div class="row">
+
+  <div class="col-3">
+    <form #customerForm="ngForm" (ngSubmit)="customerFormSubmit(customerForm)">
+      <div class="row m-1">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" name="name" id="name" [(ngModel)]="customerObj.name"
+          placeholder="Enter Name" required />
+        <div *ngIf="customerForm.controls['name']?.touched && customerForm.controls['name']?.invalid"
+          class="text-danger text-sm">
+          Name is required.
+        </div>
+      </div>
+      <div class="row m-1">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" [(ngModel)]="customerObj.emailid" name="emailid" id="emailid" class="form-control" required
+          placeholder="Enter email" />
+        <div *ngIf="customerForm.controls['emailid']?.touched && customerForm.controls['emailid']?.invalid"
+          class="text-danger text-sm">
+          Email is required.
+        </div>
+      </div>
+      <div class="row m-1">
+        <label for="exampleInputEmail1">Mobile</label>
+        <input type="tel" [(ngModel)]="customerObj.mobile" name="mobile" id="mobile" class="form-control" required
+          placeholder="Enter Phone No" />
+        <div *ngIf="customerForm.controls['mobile']?.touched && customerForm.controls['mobile']?.invalid"
+          class="text-danger text-sm">
+          Phone No is required.
+        </div>
+      </div>
+      <div class="row m-1">
+        <label for="exampleInputEmail1">Address</label>
+        <input type="text" [(ngModel)]="customerObj.address" name="address" id="address" class="form-control"
+          placeholder="Enter Address" />
+        <div *ngIf="customerForm.controls['address']?.touched && customerForm.controls['address']?.invalid"
+          class="text-danger text-sm">
+          Address is required.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 m-auto ">
+          <button class="btn btn-danger" type="reset">Reset</button>
+          @if (customerObj.custId !== 0) {
+          <button class="btn btn-primary mx-2" type="submit">Update</button>
+          }@else {
+          <button class="btn btn-primary mx-2" type="submit">Submit</button>
+          }
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-9 ">
+    <div class="row mx-2">
+      @for (item of customerList; track $index) {
+      <div class="col-3 mt-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Name : {{item.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Email : {{item.emailid}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Phone : {{item.mobile}}</h6>
+            <p class="card-text">Address : {{item.address}}</p>
+            <button (click)="editCustomer(item)" class="btn btn-primary">Edit</button>
+            <button (click)="deleteCustomer(item.custId)" class="btn btn-danger mx-2">Delete</button>
+          </div>
+        </div>
+      </div>
+      }
+
+    </div>
+  </div>
+</div>
