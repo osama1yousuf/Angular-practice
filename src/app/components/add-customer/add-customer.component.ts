@@ -8,12 +8,19 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { InputFieldRFComponent } from '../../ReusableComponents/input-field-rf/input-field-rf.component';
+import { ButtonComponent } from '../../ReusableComponents/button/button.component';
 
 @Component({
   selector: 'app-add-customer',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [
+    ReactiveFormsModule,
+    CommonModule,
+    InputFieldRFComponent,
+    ButtonComponent,
+  ],
   templateUrl: './add-customer.component.html',
   styleUrl: './add-customer.component.scss',
 })

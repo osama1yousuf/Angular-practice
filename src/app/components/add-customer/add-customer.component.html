@@ -1,42 +1,29 @@
 <div class="row">
 
-  <div class="col-3">
+  <div class=" m-2 col-3">
     <form [formGroup]="customerForm" (ngSubmit)="customerFormSubmit()">
-      <div class="row m-1">
-        <label for="exampleInputEmail1">Name</label>
-        <input type="text" class="form-control" formControlName="name" placeholder="Enter Name" />
-        <div *ngIf="customerForm.get('name')?.touched && customerForm.get('name')?.invalid" class="text-danger text-sm">
-          Name is required.
-        </div>
+      <div class="row">
+        <app-input-field-rf [form]="customerForm" name="name" label="Name" type="text" placeholder="Enter Name">
+        </app-input-field-rf>
       </div>
-      <div class="row m-1">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" formControlName="emailid" class="form-control" placeholder="Enter email" />
-        <div *ngIf="customerForm.get('emailid')?.touched && customerForm.get('emailid')?.invalid"
-          class="text-danger text-sm">
-          Email is required.
-        </div>
+      <div class=" row">
+        <app-input-field-rf [form]="customerForm" name="emailid" label="Email address" type="email"
+          placeholder="Enter email">
+        </app-input-field-rf>
       </div>
-      <div class="row m-1">
-        <label for="exampleInputEmail1">Mobile</label>
-        <input type="tel" formControlName="mobile" class="form-control" placeholder="Enter Phone No" />
-        <div *ngIf="customerForm.get('mobile')?.touched && customerForm.get('mobile')?.invalid"
-          class="text-danger text-sm">
-          Phone No is required.
-        </div>
+      <div class="row">
+        <app-input-field-rf [form]="customerForm" name="mobile" label="Mobile" type="tel" placeholder="Enter Phone No">
+        </app-input-field-rf>
       </div>
-      <div class="row m-1">
-        <label for="exampleInputEmail1">Address</label>
-        <input type="text" formControlName="address" class="form-control" placeholder="Enter Address" />
-        <div *ngIf="customerForm.get('address')?.touched && customerForm.get('address')?.invalid"
-          class="text-danger text-sm">
-          Address is required.
-        </div>
+      <div class="row">
+        <app-input-field-rf [form]="customerForm" name="address" label="Address" type="text"
+          placeholder="Enter Address">
+        </app-input-field-rf>
       </div>
       <div class="row">
         <div class="col-8 m-auto ">
-          <button class="btn btn-danger" type="reset">Reset</button>
-          <button class="btn btn-primary mx-2" type="submit">Submit</button>
+          <app-button [className]="'btn btn-danger'" [type]="'reset'" [label]="'Reset'"></app-button>
+          <app-button [className]="'btn btn-primary mx-2'" [type]="'submit'" [label]="'Submit'"></app-button>
         </div>
       </div>
     </form>

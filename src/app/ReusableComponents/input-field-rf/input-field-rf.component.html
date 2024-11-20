@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+  <label>{{ label }}</label>
+  <input
+      [type]="type"
+      class="form-control"
+      formControlName="{{ name }}"
+      [placeholder]="placeholder"
+  />
+  <div *ngIf="form.get(name)?.touched && form.get(name)?.invalid" class="text-danger text-sm">
+    {{ label }} is required.
+  </div>
+</div>

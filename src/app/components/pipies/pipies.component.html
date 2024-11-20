@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-3">
+    <p>{{name | uppercase}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{name | lowercase}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{name | titlecase}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{date | date : 'fullDate'}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{date | date : 'short'}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{amount | currency : 'EUR'}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{myObject | json}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{amount | percent}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{myArray | slice:2:4}}</p>
+  </div>
+  <div class="col-3">
+    <p>{{myString | slice:0:14}}</p>
+  </div>
+</div>
